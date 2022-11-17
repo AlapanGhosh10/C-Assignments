@@ -27,6 +27,18 @@ int main() {
 			evens[i][j] = even[index];
 		}
 	}
+	printf("\nODD MATRIX\n");
+	for(int i = 0 ; i < n ; i++) {
+		for(int j = 0 ; j < n ; j++)
+			printf("%d ", odds[i][j]);
+		printf("\n");
+	}
+	printf("\nEVEN MATRIX\n");
+	for(int i = 0 ; i < n ; i++) {
+		for(int j = 0 ; j < n ; j++)
+			printf("%d ", evens[i][j]);
+		printf("\n");
+	}
 	printf("\nEVEN MATRIX + ODD MATRIX\n");
 	for(int i = 0 ; i < n ; i++) {
 		for(int j = 0 ; j < n ; j++) 
