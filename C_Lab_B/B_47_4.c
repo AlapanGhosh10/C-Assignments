@@ -1,15 +1,13 @@
 #include <stdio.h>  
 #include <string.h> 
 
-// void swap
-
 void revStrRec(char *str1)  
 {    
     static int i, len, temp;  
     len = strlen(str1); 
       
       
-    if (i < len/2){  
+    if (i < len / 2){  
         temp = str1[i];  
         str1[i] = str1[len - i - 1];  
         str1[len - i - 1] = temp;  
@@ -39,13 +37,13 @@ int main()
         int len = strlen(str);
         strcpy(strHold, str);     
         
-        printf (" \n Before reversing string:  %s \n", str);  
+        printf ("\nBefore reversing string:  \n%s\n", str);  
             
         revStrItr(str, len);  
-        printf (" \n After reversing using iterative function :  %s\n", str);  
+        printf ("After reversing using iterative function:  %s\n\n", str);  
 
         revStrRec(strHold);
-	printf ("\n After reversing using recursive function :  %s\n", strHold); 
+	printf ("After reversing using recursive function:  %s\n\n", strHold); 
 
 }
 
