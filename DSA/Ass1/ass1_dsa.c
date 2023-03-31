@@ -64,8 +64,8 @@ void indexOf(int* arr, int size, int n) {
 		printf("None");
 	printf("\n");
 } 
-/*
-void indexElement(int i) {
+
+void indexElement(int* arr, int size, int i) {
 	if(i < 0 || i >= size) {
 		printf("Invalid Index\n");
 		return;
@@ -73,17 +73,17 @@ void indexElement(int i) {
 	printf("The number at index %d is %d\n", i, arr[i]);
 }
 
-void insert(int n) {
-	arr = realloc(arr,(size + 1) * sizeof(int));
-        arr[size] = n;
-        size++;	
+void insert(int *arr, int *size, int n) {
+	arr = realloc(arr,(*size + 1) * sizeof(int));
+        arr[*size] = n;
+        (*size)++;	
 }
 
-void delete() {
-	arr = realloc(arr, (size - 1) * sizeof(int));
-	size--;
+void delete(int *arr, int *size) {
+	arr = realloc(arr, (*size - 1) * sizeof(int));
+	(*size)--;
 }
-
+/*
 void split() {
 	int mid = size / 2;
 	for(int i = mid ; i < size ; i++) {
@@ -184,21 +184,24 @@ int main() {
 			*/
 	create(arr1, &size1);
 	display(arr1, size1);
-	create(arr2, &size2);
+	/*create(arr2, &size2);
 	display(arr2, size2);
-	printf("%d %d\n", size1, size2);
+	printf("%d %d\n", size1, size2);*/
 	count(arr2, size2);
 	reverse(arr1, size1);
 	indexOf(arr1, size1, 2);
+	indexOf(arr1, size1, 9999);
+	indexElement(arr1, size1, -11);
+	indexElement(arr1, size1, 55);
+	indexElement(arr1, size1, 3);
+	insert(arr1, &size1, 10);
+	delete(arr1, &size1);
+	display(arr1, size1);
 	/*display();
 	count();
 	reverse();
 	display();
-	indexOf(2);
-	indexOf(9999);
-	indexElement(-11);
-	indexElement(55);
-	indexElement(3);
+	
 	split();
 	delete();
 	insert(11);
